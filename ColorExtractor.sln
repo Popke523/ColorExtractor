@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorExtractor", "ColorExtractor\ColorExtractor.csproj", "{10E41362-5AD7-42CB-96F2-FE01820F42E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10E41362-5AD7-42CB-96F2-FE01820F42E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E41362-5AD7-42CB-96F2-FE01820F42E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E41362-5AD7-42CB-96F2-FE01820F42E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E41362-5AD7-42CB-96F2-FE01820F42E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03472F95-C989-4344-ACBB-999F2A5E7364}
+	EndGlobalSection
+EndGlobal
