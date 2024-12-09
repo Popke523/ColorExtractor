@@ -26,8 +26,16 @@ public class RgbToYCbCrConverter : IColorModelConverter
         var cr = (byte)(yCbCr.Z * 255);
 
         return (Color.FromArgb(y, y, y),
-                Color.FromArgb(127, 255-cb, cb),
-                Color.FromArgb(cr, 255-cr, 127)
+                Color.FromArgb(127, 255 - cb, cb),
+                Color.FromArgb(cr, 255 - cr, 127)
             );
+    }
+
+    public (string, string, string) OutputLabels => ("Y", "Cb", "Cr");
+
+
+    public override string ToString()
+    {
+        return "YCbCr";
     }
 }
