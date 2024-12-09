@@ -1,3 +1,5 @@
+using System.Drawing.Imaging;
+
 namespace ColorExtractor;
 
 public partial class Form1 : Form
@@ -35,7 +37,7 @@ public partial class Form1 : Form
             wideGamutRGBToXYZConverter,
             new CustomRgbToXyzConverter()
         };
-        
+
         var predefinedIlluminants = new List<string>
         {
             "D50",
@@ -112,10 +114,28 @@ public partial class Form1 : Form
         b0PictureBox.Image = b0;
         b1PictureBox.Image = b1;
         b2PictureBox.Image = b2;
+
+        b0Label.Text = colorModelConverter.OutputLabels.Item1;
+        b1Label.Text = colorModelConverter.OutputLabels.Item2;
+        b2Label.Text = colorModelConverter.OutputLabels.Item3;
     }
 
     private void separateChannelsButton_Click(object sender, EventArgs e)
     {
         SeparateChannels();
+    }
+
+    private void createButton_Click(object sender, EventArgs e)
+    {
+        image = ImageFactory.CreateTestImage();
+
+        pictureBox1.Image = image;
+    }
+
+    private void saveOutputButton_Click(object sender, EventArgs e)
+    {
+        b0PictureBox.Image.Save("b0.png", ImageFormat.Png);
+        b1PictureBox.Image.Save("b1.png", ImageFormat.Png);
+        b2PictureBox.Image.Save("b2.png", ImageFormat.Png);
     }
 }

@@ -30,9 +30,9 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            b2Label = new Label();
+            b1Label = new Label();
+            b0Label = new Label();
             b0PictureBox = new PictureBox();
             b1PictureBox = new PictureBox();
             b2PictureBox = new PictureBox();
@@ -43,6 +43,7 @@
             converterComboBox = new ComboBox();
             separateChannelsButton = new Button();
             saveOutputButton = new Button();
+            createButton = new Button();
             groupBox1 = new GroupBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
             tableLayoutPanel4 = new TableLayoutPanel();
@@ -121,9 +122,9 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel2.Controls.Add(label3, 2, 0);
-            tableLayoutPanel2.Controls.Add(label2, 1, 0);
-            tableLayoutPanel2.Controls.Add(label1, 0, 0);
+            tableLayoutPanel2.Controls.Add(b2Label, 2, 0);
+            tableLayoutPanel2.Controls.Add(b1Label, 1, 0);
+            tableLayoutPanel2.Controls.Add(b0Label, 0, 0);
             tableLayoutPanel2.Controls.Add(b0PictureBox, 0, 1);
             tableLayoutPanel2.Controls.Add(b1PictureBox, 1, 1);
             tableLayoutPanel2.Controls.Add(b2PictureBox, 2, 1);
@@ -135,35 +136,35 @@
             tableLayoutPanel2.Size = new Size(1234, 293);
             tableLayoutPanel2.TabIndex = 0;
             // 
-            // label3
+            // b2Label
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(825, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(57, 21);
-            label3.TabIndex = 2;
-            label3.Text = "Cr/V/b";
+            b2Label.AutoSize = true;
+            b2Label.Font = new Font("Segoe UI", 12F);
+            b2Label.Location = new Point(825, 0);
+            b2Label.Name = "b2Label";
+            b2Label.Size = new Size(57, 21);
+            b2Label.TabIndex = 2;
+            b2Label.Text = "Cr/V/b";
             // 
-            // label2
+            // b1Label
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(414, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(58, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Cb/S/a";
+            b1Label.AutoSize = true;
+            b1Label.Font = new Font("Segoe UI", 12F);
+            b1Label.Location = new Point(414, 0);
+            b1Label.Name = "b1Label";
+            b1Label.Size = new Size(58, 21);
+            b1Label.TabIndex = 1;
+            b1Label.Text = "Cb/S/a";
             // 
-            // label1
+            // b0Label
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 21);
-            label1.TabIndex = 0;
-            label1.Text = "Y/H/L";
+            b0Label.AutoSize = true;
+            b0Label.Font = new Font("Segoe UI", 12F);
+            b0Label.Location = new Point(3, 0);
+            b0Label.Name = "b0Label";
+            b0Label.Size = new Size(50, 21);
+            b0Label.TabIndex = 0;
+            b0Label.Text = "Y/H/L";
             // 
             // b0PictureBox
             // 
@@ -227,6 +228,7 @@
             flowLayoutPanel1.Controls.Add(converterComboBox);
             flowLayoutPanel1.Controls.Add(separateChannelsButton);
             flowLayoutPanel1.Controls.Add(saveOutputButton);
+            flowLayoutPanel1.Controls.Add(createButton);
             flowLayoutPanel1.Controls.Add(groupBox1);
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(620, 3);
@@ -271,13 +273,24 @@
             saveOutputButton.TabIndex = 5;
             saveOutputButton.Text = "Save Output";
             saveOutputButton.UseVisualStyleBackColor = true;
+            saveOutputButton.Click += saveOutputButton_Click;
+            // 
+            // createButton
+            // 
+            createButton.Location = new Point(3, 119);
+            createButton.Name = "createButton";
+            createButton.Size = new Size(121, 23);
+            createButton.TabIndex = 6;
+            createButton.Text = "Create";
+            createButton.UseVisualStyleBackColor = true;
+            createButton.Click += createButton_Click;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(flowLayoutPanel2);
             groupBox1.Location = new Point(130, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(386, 287);
+            groupBox1.Size = new Size(481, 287);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Lab Settings";
@@ -290,7 +303,7 @@
             flowLayoutPanel2.Controls.Add(tableLayoutPanel7);
             flowLayoutPanel2.Location = new Point(6, 20);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(374, 262);
+            flowLayoutPanel2.Size = new Size(469, 262);
             flowLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -351,6 +364,7 @@
             // 
             // tableLayoutPanel7
             // 
+            tableLayoutPanel7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel7.AutoSize = true;
             tableLayoutPanel7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             tableLayoutPanel7.ColumnCount = 3;
@@ -383,7 +397,7 @@
             tableLayoutPanel7.RowStyles.Add(new RowStyle());
             tableLayoutPanel7.RowStyles.Add(new RowStyle());
             tableLayoutPanel7.RowStyles.Add(new RowStyle());
-            tableLayoutPanel7.Size = new Size(351, 160);
+            tableLayoutPanel7.Size = new Size(363, 160);
             tableLayoutPanel7.TabIndex = 1;
             // 
             // yBnumericUpDown
@@ -391,10 +405,10 @@
             yBnumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             yBnumericUpDown.DecimalPlaces = 5;
             yBnumericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 327680 });
-            yBnumericUpDown.Location = new Point(236, 76);
+            yBnumericUpDown.Location = new Point(244, 76);
             yBnumericUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             yBnumericUpDown.Name = "yBnumericUpDown";
-            yBnumericUpDown.Size = new Size(112, 23);
+            yBnumericUpDown.Size = new Size(116, 23);
             yBnumericUpDown.TabIndex = 13;
             // 
             // xBnumericUpDown
@@ -402,10 +416,10 @@
             xBnumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             xBnumericUpDown.DecimalPlaces = 5;
             xBnumericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 327680 });
-            xBnumericUpDown.Location = new Point(119, 76);
+            xBnumericUpDown.Location = new Point(123, 76);
             xBnumericUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             xBnumericUpDown.Name = "xBnumericUpDown";
-            xBnumericUpDown.Size = new Size(111, 23);
+            xBnumericUpDown.Size = new Size(115, 23);
             xBnumericUpDown.TabIndex = 12;
             // 
             // yGnumericUpDown
@@ -413,10 +427,10 @@
             yGnumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             yGnumericUpDown.DecimalPlaces = 5;
             yGnumericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 327680 });
-            yGnumericUpDown.Location = new Point(236, 47);
+            yGnumericUpDown.Location = new Point(244, 47);
             yGnumericUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             yGnumericUpDown.Name = "yGnumericUpDown";
-            yGnumericUpDown.Size = new Size(112, 23);
+            yGnumericUpDown.Size = new Size(116, 23);
             yGnumericUpDown.TabIndex = 11;
             // 
             // xGnumericUpDown
@@ -424,10 +438,10 @@
             xGnumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             xGnumericUpDown.DecimalPlaces = 5;
             xGnumericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 327680 });
-            xGnumericUpDown.Location = new Point(119, 47);
+            xGnumericUpDown.Location = new Point(123, 47);
             xGnumericUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             xGnumericUpDown.Name = "xGnumericUpDown";
-            xGnumericUpDown.Size = new Size(111, 23);
+            xGnumericUpDown.Size = new Size(115, 23);
             xGnumericUpDown.TabIndex = 10;
             // 
             // label8
@@ -442,7 +456,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(119, 0);
+            label9.Location = new Point(123, 0);
             label9.Name = "label9";
             label9.Size = new Size(13, 15);
             label9.TabIndex = 2;
@@ -451,7 +465,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(236, 0);
+            label10.Location = new Point(244, 0);
             label10.Name = "label10";
             label10.Size = new Size(13, 15);
             label10.TabIndex = 3;
@@ -489,10 +503,10 @@
             xRnumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             xRnumericUpDown.DecimalPlaces = 5;
             xRnumericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 327680 });
-            xRnumericUpDown.Location = new Point(119, 18);
+            xRnumericUpDown.Location = new Point(123, 18);
             xRnumericUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             xRnumericUpDown.Name = "xRnumericUpDown";
-            xRnumericUpDown.Size = new Size(111, 23);
+            xRnumericUpDown.Size = new Size(115, 23);
             xRnumericUpDown.TabIndex = 8;
             // 
             // yRnumericUpDown
@@ -500,10 +514,10 @@
             yRnumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             yRnumericUpDown.DecimalPlaces = 5;
             yRnumericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 327680 });
-            yRnumericUpDown.Location = new Point(236, 18);
+            yRnumericUpDown.Location = new Point(244, 18);
             yRnumericUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             yRnumericUpDown.Name = "yRnumericUpDown";
-            yRnumericUpDown.Size = new Size(112, 23);
+            yRnumericUpDown.Size = new Size(116, 23);
             yRnumericUpDown.TabIndex = 9;
             // 
             // xwNumericUpDown
@@ -511,16 +525,16 @@
             xwNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             xwNumericUpDown.DecimalPlaces = 5;
             xwNumericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 327680 });
-            xwNumericUpDown.Location = new Point(119, 105);
+            xwNumericUpDown.Location = new Point(123, 105);
             xwNumericUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             xwNumericUpDown.Name = "xwNumericUpDown";
-            xwNumericUpDown.Size = new Size(111, 23);
+            xwNumericUpDown.Size = new Size(115, 23);
             xwNumericUpDown.TabIndex = 16;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(119, 131);
+            label14.Location = new Point(123, 131);
             label14.Name = "label14";
             label14.Size = new Size(49, 15);
             label14.TabIndex = 7;
@@ -531,10 +545,10 @@
             ywNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ywNumericUpDown.DecimalPlaces = 5;
             ywNumericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 327680 });
-            ywNumericUpDown.Location = new Point(236, 105);
+            ywNumericUpDown.Location = new Point(244, 105);
             ywNumericUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             ywNumericUpDown.Name = "ywNumericUpDown";
-            ywNumericUpDown.Size = new Size(112, 23);
+            ywNumericUpDown.Size = new Size(116, 23);
             ywNumericUpDown.TabIndex = 15;
             // 
             // gammaNumericUpDown
@@ -542,9 +556,9 @@
             gammaNumericUpDown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             gammaNumericUpDown.DecimalPlaces = 2;
             gammaNumericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
-            gammaNumericUpDown.Location = new Point(236, 134);
+            gammaNumericUpDown.Location = new Point(244, 134);
             gammaNumericUpDown.Name = "gammaNumericUpDown";
-            gammaNumericUpDown.Size = new Size(112, 23);
+            gammaNumericUpDown.Size = new Size(116, 23);
             gammaNumericUpDown.TabIndex = 14;
             // 
             // label15
@@ -675,9 +689,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button loadImageButton;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Label b2Label;
+        private Label b1Label;
+        private Label b0Label;
         private System.Windows.Forms.ComboBox converterComboBox;
         private System.Windows.Forms.Button separateChannelsButton;
         private GroupBox groupBox1;
@@ -709,5 +723,6 @@
         private System.Windows.Forms.NumericUpDown yRnumericUpDown;
         private System.Windows.Forms.NumericUpDown gammaNumericUpDown;
         private System.Windows.Forms.Button saveOutputButton;
+        private Button createButton;
     }
 }

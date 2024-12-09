@@ -6,9 +6,9 @@ public class ImageExtractor(IColorModelConverter converter)
 
     public (Bitmap b0, Bitmap b1, Bitmap b2) Extract(Bitmap image)
     {
-        var b0 = new Bitmap(image.Width, image.Height);
-        var b1 = new Bitmap(image.Width, image.Height);
-        var b2 = new Bitmap(image.Width, image.Height);
+        var b0 = new DirectBitmap(image.Width, image.Height);
+        var b1 = new DirectBitmap(image.Width, image.Height);
+        var b2 = new DirectBitmap(image.Width, image.Height);
 
         for (var i = 0; i < image.Width; i++)
         {
@@ -22,6 +22,6 @@ public class ImageExtractor(IColorModelConverter converter)
             }
         }
 
-        return (b0, b1, b2);
+        return (b0.Bitmap, b1.Bitmap, b2.Bitmap);
     }
 }
